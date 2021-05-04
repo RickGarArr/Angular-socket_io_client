@@ -1,0 +1,15 @@
+<div class="container pt-3">
+    <h1>Mensajes</h1>
+    <hr>
+    <form (ngSubmit)="enviar()">
+        <div class="row">
+            <div class="col-8">
+                <input type="text" [(ngModel)]="texto" class="form-control" name="texto" placeholder="Escriba un Mensaje" autofocus autocomplete="off">
+            </div>
+            <div class="col-4">
+                <button type="submit" class="btn btn-success w-100" [disabled]="texto.trim() === ''">Enviar</button>
+            </div>
+        </div>
+    </form>
+    <chat-mensajes [mensajes]="mensajes" #app_mensajes></chat-mensajes>
+</div>

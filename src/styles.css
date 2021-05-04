@@ -1,1 +1,24 @@
 /* You can add global styles to this file, and also import other style files */
+p {
+    margin: 0;
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+#chat-mensajes {
+    min-height: 200px;
+    height: 40vh;
+    border: 1px solid #e1e1e1;
+    border-radius: 5px;
+    overflow-y: auto;
+}
+
+#chat-mensajes li {
+    border: none;
+    border-bottom: 1px solid #e1e1e1;
+}
+

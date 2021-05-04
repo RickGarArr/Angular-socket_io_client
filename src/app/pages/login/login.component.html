@@ -1,0 +1,11 @@
+<div class="row justify-content-center contenido">
+    <div class="col-6">
+        <h2 class="text-center text-capitalize">Inicia Sesión</h2>
+        <form (ngSubmit)="login()" [formGroup]="formLogin">
+            <div class="form-group mt-3">
+                <input class="form-control" id="nombre" formControlName="nombre" placeholder="Ingresa tu nombre u apodo">
+            </div>
+            <button type="submit" class="btn btn-primary mt-3 w-100">Iniciar Sesión</button>
+        </form>
+    </div>
+</div>

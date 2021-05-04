@@ -1,0 +1,5 @@
+<ul id="chat-mensajes" class="list-group mt-3">
+    <li class="list-group-item" *ngFor="let mensaje of mensajes">
+        <p><strong>{{ mensaje.de }}:</strong> {{ mensaje.cuerpo }}</p>
+    </li>
+</ul>

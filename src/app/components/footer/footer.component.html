@@ -1,0 +1,7 @@
+<footer class="footer mt-auto py-3 bg-dark text-end">
+    <div class="container text-white">
+      Server Estatus:
+      <span *ngIf="webSocketService.socketStatus" class="text-success">Online</span>
+      <span *ngIf="!webSocketService.socketStatus" class="text-danger">Offline</span>
+    </div>
+  </footer>
