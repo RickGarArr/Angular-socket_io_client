@@ -1,8 +1,9 @@
 export default class Usuario {
-    private nombre: string;
-    private _instance: Usuario;
+    public nombre: string;
+    public id: string;
 
-    constructor( nombre) {
+    constructor(nombre: string, id: string) {
         this.nombre = nombre;
+        this.id = id;
     }
 }

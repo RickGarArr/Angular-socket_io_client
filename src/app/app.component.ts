@@ -1,5 +1,5 @@
-import { AfterContentInit, AfterViewInit, Component, OnChanges, OnInit, SimpleChanges, } from '@angular/core';
-import { Observable, Subscriber } from 'rxjs';
+import { AfterContentInit, AfterViewInit, Component, OnChanges, OnDestroy, OnInit, SimpleChanges, } from '@angular/core';
+import { Observable, Subscriber, Subscription } from 'rxjs';
 import { ChatService } from './services/chat.service';
 import { WebSocketService } from './services/web-socket.service';
 
@@ -8,12 +8,20 @@ import { WebSocketService } from './services/web-socket.service';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent implements OnInit {
+export class AppComponent implements OnInit, OnDestroy{
 
-  constructor() {
+  private mensajesSubs: Subscription;
+
+  constructor(private wsService: WebSocketService, private chatService: ChatService) {
   }
-
+  
   ngOnInit() {
+    this.mensajesSubs = this.chatService.obtenerMensajesPrivados().subscribe( mensaje => {
+      console.log(mensaje);
+    });
   }
-
+  
+  ngOnDestroy(): void {
+    this.mensajesSubs.unsubscribe();
+  }
 }
